@@ -1,0 +1,20 @@
+<div class="container-fluid">
+  <h2 style="text-align: center;">My Heroes</h2>
+  <br>
+  <div class="row">
+    <div *ngFor="let hero of heroes; let i = index">
+      <div class="col d-flex align-self-stretch  h-100" style="padding-bottom: 1rem;">
+        <div class="shadow-sm card" style="width: 18rem; border-radius: .4rem;">
+          <div class="card-body" [class.selected]="hero === selectedHero">
+            <h5 class="card-title">{{hero.name | uppercase }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">#{{hero.id}}</h6>
+            <p class="card-text" *ngIf="hero.hasOwnProperty('desc')"> <b>Description</b> : {{hero.desc}}
+            </p>
+            <button type="button" class="btn btn-light"  routerLink="/detail/{{hero.id}}">Hero's Details</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

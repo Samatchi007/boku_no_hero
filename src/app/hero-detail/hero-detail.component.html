@@ -1,0 +1,11 @@
+<div class="row" *ngIf="hero">
+  <div class="card " style="width: 40rem; margin:auto;text-align: center;">
+    <img class="card-img-top" src="../../assets/pics/logo.png" alt="Card image cap">
+    <div class="card-body">
+      <p class="card-text">Current Hero is <b>{{hero.name}}</b>, ranked
+        <b>#{{hero.id}}</b> </p>
+      <p class="card-text" *ngIf="hero.hasOwnProperty('desc')"> <b>Description</b> :
+        {{hero.desc}}
+    </div>
+  </div>
+</div>
